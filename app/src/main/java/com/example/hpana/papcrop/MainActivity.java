@@ -1,5 +1,6 @@
 package com.example.hpana.papcrop;
 
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -12,12 +13,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        CropImageView cropImageView = (CropImageView) findViewById(R.id.CropImageView);
-        cropImageView.setAspectRatio(5, 5);
-        cropImageView.setFixedAspectRatio(true);
-        cropImageView.setGuidelines(1);
-        cropImageView.setImageDrawable(getApplicationContext().getResources().getDrawable(R.drawable.fff));
+        com.theartofdev.edmodo.cropper.CropImageView cropImageView= (com.theartofdev.edmodo.cropper.CropImageView) findViewById(R.id.cropImageView);
+        cropImageView.setImageUriAsync(Uri.parse("android.resource://com.example.hpana.papcrop/drawable/fff"));
 
-        
+
     }
 }
